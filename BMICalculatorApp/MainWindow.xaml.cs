@@ -31,6 +31,12 @@ public partial class MainWindow : Window
 
     private void ResetButton_Click(object sender, RoutedEventArgs e)
     {
+        HeightTextBox.Text = "";
+        WeightTextBox.Text = "";
 
+        ResultLabel.Content = "BMI: -";
+
+        _userHeight = 0;
+        _userWeight = 0;
     }
 }
