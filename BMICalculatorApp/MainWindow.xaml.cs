@@ -18,7 +18,8 @@ public partial class MainWindow : Window
 {
     private double _userHeight;
     private double _userWeight;
-   
+    private double _bmi;
+
     public MainWindow()
     {
         InitializeComponent();
@@ -26,7 +27,21 @@ public partial class MainWindow : Window
 
     private void CalculateButton_Click(object sender, RoutedEventArgs e)
     {
+        if (double.TryParse(HeightTextBox.Text, out double h) &&
+              double.TryParse(WeightTextBox.Text, out double w))
+        {
+            _userHeight = h;
+            _userWeight = w;
 
+            double heightInMeters = _userHeight / 100.0;
+            _bmi = _userWeight / (heightInMeters * heightInMeters);
+
+            ResultLabel.Content = $"BMI: {Math.Round(_bmi, 2)}";
+        }
+        else
+        {
+            MessageBox.Show("Proszę wprowadzić poprawne wartości liczbowe.");
+        }
     }
 
     private void ResetButton_Click(object sender, RoutedEventArgs e)
