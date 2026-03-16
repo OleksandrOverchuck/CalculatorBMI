@@ -16,8 +16,21 @@ namespace BMICalculatorApp;
 /// </summary>
 public partial class MainWindow : Window
 {
+    private double _userHeight;
+    private double _userWeight;
+   
     public MainWindow()
     {
         InitializeComponent();
+    }
+
+    private void CalculateButton_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
+
+    private void ResetButton_Click(object sender, RoutedEventArgs e)
+    {
+
     }
 }
