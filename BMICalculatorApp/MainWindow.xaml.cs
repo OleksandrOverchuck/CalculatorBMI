@@ -16,8 +16,8 @@ namespace BMICalculatorApp;
 /// </summary>
 public partial class MainWindow : Window
 {
-    private double _userHeight;
-    private double _userWeight;
+    private double _height;
+    private double _weight;
    
     public MainWindow()
     {
